@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% for row in rows %}
+ <div class="divperpost">
+    <h5>NAME:-{{ row['pname'] }}</h5>
+      <h5>tech used-{{ row['tech'] }}</h5>
+       <h5>Desc:-{{ row['desc'] }}</h5>
+        <h5>submitted by:-{{ row['sapid'] }}</h5>
+       <img class="imgpost" src="static/project2.png">
+     </div>
+
+{% endfor %}
+
+
+{% endblock %}

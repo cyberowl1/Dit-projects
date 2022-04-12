@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% if done %}
+<div class="alert alert-success" role="alert">
+ your project {{ pname }}  got submited by sap {{ session["sap"] }}.
+</div>
+{% endif %}
+<div class="container box1">
+  <h3 class="thead">Submit Project</h3>
+<form action="/submitp" method="POST">
+  <div class="mb-3">
+    <label for="projectname" class="form-label">Project Name</label>
+    <input type="text" name="pname" class="form-control" id="pname" aria-describedby="emailHelp">
+    <!--<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+  </div>
+   <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Tech used:</label>
+    <input type="text" name="ptech" placeholder="pyhton,cpp etc." class="form-control" id="exampletech">
+  </div>
+   <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Branch:</label>
+    <input type="text" name="pbranch" placeholder="CSE,ECE" class="form-control" id="exampletech">
+  </div>
+   <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Github:</label>
+    <input type="text" name="githuburl" placeholder="https://github/xyz" class="form-control" id="exampletech">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Description</label>
+    <input type="text" name="pdesc" class="form-control" id="exampledesc">
+  </div>
+
+<img class="subimg"src="static/project2.png">
+
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock %}

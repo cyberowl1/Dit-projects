@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container profile-box">
+    <img class="pimg" src="static/profile.png">
+
+    <div class="pitem">
+        <li class="p-li">{{ session["name"] }} </li>
+         <li class="p-li">{{ session["sap"] }}</li>
+          <li class="p-li">email</li>
+           <li class="p-li">{{ projects|length }} </li>
+    </div>
+<div class="projects">
+    <h3 class="thead">All projects by {{ session["name"] }}</h3>
+     {% for project in projects %}
+     <div class="divperpost">
+    <h5>NAME:-{{ project['pname'] }}</h5>
+      <h5>tech used-{{ project['tech'] }}</h5>
+      <a href="{{ project['github'] }}"> <h5>Github:-{{ project['github'] }}</h5></a>
+       <h5>Desc:-{{ project['desc'] }}</h5>
+       <h5>Branch:-{{ project['branch'] }}</h5>
+
+       <img class="imgpost" src="static/project2.png">
+     </div>
+
+    {% endfor %}
+
+</div>
+
+
+
+</div>
+
+
+{% endblock %}
+
+
