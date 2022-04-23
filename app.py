@@ -16,8 +16,8 @@ Session(app)
 
 @app.route('/')
 def index():
-
-    return render_template("index.html")
+    rows=db.execute("select * from project")
+    return render_template("index.html",rows=rows)
 
 @app.route('/projects')
 def projects():
@@ -29,35 +29,44 @@ def projects():
 @app.route('/Register', methods=["POST"])
 def register():
    if request.method == "POST":
+      rows=db.execute("select * from project")
+
       if not request.form.get('sap') or not request.form.get('pswrd') or not request.form.get('email'):
          return render_template("error.html",msg="missing something")
+      username = request.form.get('sap')
+      urows=db.execute(("select * from user where sapid=?"),username)
+      if urows:
+         return render_template("index.html",msg="User Already exist with that provided sap id",rows=rows)
    sap = request.form.get('sap')
    name = request.form.get('name')
    email = request.form.get('email')
    pswrd = request.form.get('pswrd')
+
    h = bcrypt.hashpw(pswrd.encode("utf-8"), bcrypt.gensalt(12))
    db.execute("INSERT INTO user (sapid,name,pswrd,email) VALUES(?,?,?,?)",sap,name,h,email)
-   return render_template("index.html",sap=sap,email=email)
+   return render_template("index.html",sap=sap,email=email,rows=rows)
 
 @app.route('/login',methods=["POST","GET"])
 def login():
    if request.method == "POST":
+      rows=db.execute("select * from project")
       if not request.form.get('sap') or not request.form.get('pswrd'):
          return render_template("error.html",msg="missing username or pswrd")
       username = request.form.get('sap')
       pswrd = request.form.get('pswrd')
       # h= bcrypt.hashpw(pswrd.encode("utf-8"),bcrypt.gensalt())
-      rows=db.execute(("select * from user where sapid=?"),username)
-      if not rows:
-          return render_template("index.html",msg=True)
+      userrows=db.execute(("select * from user where sapid=?"),username)
+      if not userrows:
+          return render_template("index.html",msg="wrong! username or password entered",rows=rows)
       else:
-         p=rows[0]['pswrd']
+         p=userrows[0]['pswrd']
          if bcrypt.checkpw(pswrd.encode("utf-8"),p):
+
             session["sap"]=request.form.get("sap")
             session["pswrd"]=request.form.get("pswrd")
-            session["name"]=rows[0]['name']
+            session["name"]=userrows[0]['name']
             session["loggedin"]=True
-            return render_template("index.html")
+            return render_template("index.html",rows=rows)
 
 
 
@@ -67,11 +76,12 @@ def login():
 
 @app.route('/logout')
 def logout():
+   rows=db.execute("select * from project")
    session["sap"]=None
    session["pswrd"]=None
    session["loggedin"]=None
 
-   return render_template("index.html")
+   return render_template("index.html",rows=rows)
 
 @app.route('/submitp',methods=["POST","GET"])
 def submitp():

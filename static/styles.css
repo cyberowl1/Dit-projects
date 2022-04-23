@@ -6,32 +6,24 @@
 }
 .rectangle1{
     position: absolute;
-width: 28vw;
-height: 40vh;
-/*left: 0px;*/
-/*top: 0px;*/
+width: 32vw;
+height: 50vh;
+background-color:black;
 margin-top:2rem;
 margin-left:1rem;
-
-background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #C4C4C4;
-mix-blend-mode: darken;
-opacity: 0.34;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 
 }
 .rectangle2{
     position: absolute;
-width: 28vw;
-height: 40vh;
-left: 35%;
-/*top: 0px;*/
-bottom:-42vh;
-
-background: #C4C4C4;
+width: 39vw;
+height: 50vh;
+left: 32%;
+bottom:-48vh;
+display:none;
 mix-blend-mode: darken;
-opacity: 0.7;
-border: 1px solid #000000;
+border-bottom: 1px solid #000000;
 box-sizing: border-box;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
@@ -39,16 +31,12 @@ transform: rotate(-1.5deg);
 }
 .rectangle3{
     position: absolute;
-width: 28vw;
-height: 40vh;
+width: 32vw;
+height: 50vh;
 left: 69%;
-/*top: 0px;*/
 margin-top:2rem;
 margin-left:1rem;
-
-background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #C4C4C4;
-mix-blend-mode: darken;
-opacity: 0.3;
+background-color:black;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 }
@@ -58,7 +46,11 @@ border-radius: 20px;
     font-family: cursive;
     text-decoration:underline;
     font-size:4rem;
-    transform: rotate(-4.5deg);
+    /*transform: rotate(-4.5deg);*/
+    color:black;
+    /*background-color:#00c3ff;*/
+    border-radius:5px;
+
 }
 .bg-grey{
 --bs-bg-opacity: 1;
@@ -92,7 +84,7 @@ top: 9vh;
     color: black;
 font-family: ;
 text-align: center;
-color: cornsilk;
+color:crimson;
 margin: 1rem;
 }
 .pimg{
@@ -118,8 +110,6 @@ margin: 1rem;
     border:2px solid black;
     border-radius:20%;
     padding:.4rem;
-
-
 }
 .projects{
     background-color:lightgreen;
@@ -127,9 +117,6 @@ margin: 1rem;
     top:40vh;
     padding:2rem;
     align-content:center;
-    /*left:20%;*/
-      /*font-family: fantasy, Arial, fantasy;*/
-
 }
 .projects .thead{
     font-family: fantasy, Arial, fantasy;
@@ -138,12 +125,97 @@ margin: 1rem;
 .divperpost{
     padding:1rem;
     background-color:aliceblue;
-    width:70%;
+    width:51%;
+    left: 23%;
+    position: relative;
     margin:2rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .imgpost{
-    width:10vw;
-    left:40%;
-    position:absolute;
-    top:40%;
+   width: 10vw;
+left: 78%;
+position: absolute;
+top: 22%;
+}
+.desc{
+     position:absolute;
+    left: 38%;
+    bottom:10%;
+    font-family: chalboard;
+    font-size:1.6rem;
+    color:black;
+}
+footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:50px;
+   width:100%;
+   background: aliceblue;
+   margin-top:2vh;
+}
+.boximg{
+  width: 81%;
+height: 69vh;
+display: flex;
+position: relative;
+top: -49px;
+}
+body
+{
+    background-color: antiquewhite;
+}
+.msg-box
+{   width:70%;
+    background-color:red;
+    border:2px solid red;
+    display:none;
+}
+marquee{
+    color :red;
+    font-size:1.2rem;
+}
+.counter-box
+{
+   width: 100%;
+background-color: aliceblue;
+height: 20vh;
+border: 2px solid blue;
+position: absolute;
+top: 130%;
+margin-left: 2rem;
+font-size:2rem;
+display:flex;
+}
+.ucounter
+{
+    display:flex;
+    width:34.33%;
+    border-right:2px solid black;
+    color:red;
+    font-size:2.8rem;
+}
+.pcounter
+{
+      display:flex;
+      padding:5px;
+    width:33.33%;
+
+    color:red;
+    font-size:2.8rem;
+}
+.modal-body
+{
+    position: relative;
+flex: 1 1 auto;
+padding: 1rem;
+display: contents;
+}
+.form-control
+{
+    display:inline;
+      margin: .3rem;
+
+  margin-right: 2rem;
+}
 }

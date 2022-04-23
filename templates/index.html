@@ -3,13 +3,21 @@
 {% block body %}
 {% if msg %}
 <div class="alert alert-danger" role="alert">
-  You have entered incorrect sap or password!
+  {{ msg }}
 </div>
 {% endif %}
 <img src="/static/b.png" alt="Nature" class="responsive">
-<div class="rectangle1"></div>
-<h4 class="title">hey how are you</h4>
-<div class="rectangle2"></div>
-<div class="rectangle3"></div>
+<div class="rectangle1"><img src="/static/p1.png" class="boximg"></div>
+<h4 class="title">Dit-projects-HuB</h4>
+<h6 class ="desc">Uploads your projects here<br>and find project mates.</h6>
+<div class="rectangle2"><img src="/static/p2.png" class="boximg"></div>
+<div class="rectangle3"><img src="/static/p2.png" class="boximg"></div>
+<marquee>Latest Post:-{{ rows[0]['pname'] }}</marquee>
+<div class="container msg-box">hey how are ou
+</div>
 
+<div class="container counter-box">
+   Total Project: <span class="ucounter">{{ rows|length }}+</span>
+    Total UserRegistered<span class="pcounter">15+</span>
+     </div>
 {% endblock %}
