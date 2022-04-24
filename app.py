@@ -51,13 +51,13 @@ def login():
    if request.method == "POST":
       rows=db.execute("select * from project")
       if not request.form.get('sap') or not request.form.get('pswrd'):
-         return render_template("error.html",msg="missing username or pswrd")
+         return render_template("index.html",msg="missing username or pswrd")
       username = request.form.get('sap')
       pswrd = request.form.get('pswrd')
       # h= bcrypt.hashpw(pswrd.encode("utf-8"),bcrypt.gensalt())
       userrows=db.execute(("select * from user where sapid=?"),username)
       if not userrows:
-          return render_template("index.html",msg="wrong! username or password entered",rows=rows)
+          return render_template("index.html",msg="wrong! username entered",rows=rows)
       else:
          p=userrows[0]['pswrd']
          if bcrypt.checkpw(pswrd.encode("utf-8"),p):
@@ -67,6 +67,9 @@ def login():
             session["name"]=userrows[0]['name']
             session["loggedin"]=True
             return render_template("index.html",rows=rows)
+         else:
+            return render_template("index.html",msg="wrong!  password entered",rows=rows)
+
 
 
 
