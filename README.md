@@ -21,8 +21,10 @@ A platfform for sharing and getting help on projects which you are working on.
 4. password hashing technique used <br/>
 5. 
 6. 
+```shell
 7. ![Screenshot 2022-08-08 at 9 49 52 PM](https://user-images.githubusercontent.com/15086260/183466086-8d6c6b3e-1f20-42ef-a8c6-a5542f4c5cb7.png)
- .
+ 
+ ```
 5. live; <br/>
 
 HOMEPAGE
